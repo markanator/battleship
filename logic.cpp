@@ -45,7 +45,6 @@ Coordinates* find_ships(bool** board, const int width, const int height, const i
             if (board[i][j]) {
                 ship->x = i;
                 ship->y = j;
-                return ship;
                 break;
             }
         }

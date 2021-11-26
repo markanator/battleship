@@ -23,12 +23,34 @@ int main() {
 					cout << endl;
 	}
 	// 3. play game
+	int turns = 0;
 
-	Coordinates* coord = find_ships(board, sizeBoard, sizeBoard, shipCount);
-	cout << "x:" << coord->x << ", y:" << coord->y << endl;
+	while (turns < shipCount) {
+		Coordinates* coord = find_ships(board, sizeBoard, sizeBoard, shipCount);
+		cout << "x:" << coord->x << ", y:" << coord->y << endl;
+		ResponseType res = guess(board, coord->x, coord->y);
 
-	delete coord;
-	coord = NULL;
+		switch (res) {
+		case ResponseType::HIT:
+			board[coord->x][coord->y] = false;
+			turns++;
+			break;
+		default:
+			break;
+		}
+
+		delete coord;
+		coord = NULL;
+	}
+
+	for (int i = 0; i < sizeBoard; i++) {
+			for (int j = 0; j < sizeBoard; j++) {
+					cout << setw(3)  << board[i][j];
+			}
+					cout << endl;
+	}
+
+
 	destroy_board(board, sizeBoard);
 	// system("pause>0");
 	return 0;
