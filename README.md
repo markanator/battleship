@@ -1,8 +1,11 @@
 # Battle Ship Assignment
 
-Your job is to create a battleship "solver". The code provided is to initialze and allocate a board and stub methods to place ships on that board. all ships are 1x1.
+Your job is to create a battleship "solver". 
+The code provided is to initialze and allocate 
+a board and stub methods to place ships on that board. all ships are 1x1.
 
-Your job is to implement an algorithm to search the board for ships in as few guesses as possible.
+Your job is to implement an algorithm to search the board 
+for ships in as few guesses as possible.
 
 The guess returns 3 options:
 
