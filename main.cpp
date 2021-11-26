@@ -7,10 +7,12 @@ using namespace std;
 int main() {
 	// 1. create board
 	int sizeBoard = 6;
+	int shipCount = 5;
+
+	// 1. create board
 	bool** board = create_board(sizeBoard, sizeBoard);
 
-	// 2. place ships
-	int shipCount = 5;
+	// 2. place ships and populate board
 	place_ships(board, shipCount, sizeBoard, sizeBoard);
 
 	// print board
@@ -20,8 +22,13 @@ int main() {
 			}
 					cout << endl;
 	}
-	// choose random position to check
+	// 3. play game
 
+	Coordinates* coord = find_ships(board, sizeBoard, sizeBoard, shipCount);
+	cout << "x:" << coord->x << ", y:" << coord->y << endl;
+
+	delete coord;
+	coord = NULL;
 	destroy_board(board, sizeBoard);
 	// system("pause>0");
 	return 0;
